@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
   match('/', {:via => :get, :to => 'pets#index'})
-  match('pets', {:via => :get, :to => 'pets#index'})
-  match('pets', {:via => :post, :to => 'pets#create'})
-  match('pets/new', {:via => :get, :to => 'pets#index'})
-  match('pets/:id', {:via => :get, :to => 'pets#show'})
-  match('pets/:id/edit', {:via => :get, :to => 'pets#edit'})
-  match('pets/:id', {:via => [:patch, :put], :to => 'pets#update'})
-  match('pets/:id', {:via => :delete, :to => 'pets#destroy'})
+  resources :pets
   match('pets/:pet_id/vet_appointments/new', {:via => :get, :to => 'vet_appointments#new'})
   match('pets/:pet_id/vet_appointments', {:via => :post, :to => 'vet_appointments#create'})
   match('pets/:pet_id/vet_appointments/:vet_appointment_id/edit', {:via => :get, :to => 'vet_appointments#edit'})
