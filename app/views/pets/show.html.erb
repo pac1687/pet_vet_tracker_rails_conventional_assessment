@@ -6,11 +6,11 @@
 <p>Weight: <%= @pet.weight %> lbs.</p>
 <p>Kind: <%= @pet.kind %></p>
 
-<a class="btn btn-warning" href="/pets/<%= @pet.id %>/edit">Edit</a>
-<a class="btn btn-danger" href="/pets/<%= @pet.id %>"
-      data-confirm="You sure?"
-      data-method="delete"
-      rel="nofollow">Delete</a>
+<%= link_to "Edit", edit_pet_path(@pet), :class => "btn btn-warning" %>
+<%= link_to "Delete", pet_path(@pet), 
+  :data =>{:confirm=> "You sure?",
+           :method => "delete"},
+           :class => "btn btn-danger" %>
 
 <div class="page-header">
   <h3>Appointments:</h3>
@@ -21,11 +21,11 @@
     <% @pet.vet_appointments.each do |vet_appointment| %>
       <li>
         Veterinarian: <%= vet_appointment.veterinarian.name %>
-        <a class="btn btn-warning" href="/pets/<%= @pet.id %>/vet_appointments/<%= vet_appointment.id %>/edit">Edit</a> |
-        <a class="btn btn-danger" href="/pets/<%= @pet.id %>/vet_appointments/<%= vet_appointment.id %>"
-           data-confirm="You sure?"
-           data-method="delete"
-           rel="nofollow">Delete</a>
+        <%= link_to "Edit", edit_pet_vet_appointment_path(@pet, vet_appointment), :class => "btn btn-warning" %> |
+        <%= link_to "Delete", pet_vet_appointment_path(@pet, vet_appointment), 
+          :data =>{:confirm=> "You sure?",
+                   :method => "delete"},
+                   :class => "btn btn-danger" %>
         <div class="container">
           <ul>
             <li>Description: <%= vet_appointment.description %></li>
@@ -39,4 +39,4 @@
   </ol>
 </div>
 
-<a class="btn btn-primary" href="/pets/<%= @pet.id %>/vet_appointments/new">Add Appointment</a>
+<%= link_to "Add Appointment", new_pet_vet_appointment_path(@pet), :class=> "btn btn-primary" %>

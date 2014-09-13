@@ -20,7 +20,7 @@ class VetAppointmentsController < ApplicationController
   def edit
     @veterinarians = Veterinarian.all
     @pet = Pet.find(params[:pet_id])
-    @vet_appointment = VetAppointment.find(params[:vet_appointment_id])
+    @vet_appointment = VetAppointment.find(params[:id])
     render 'edit'
   end
 
@@ -36,7 +36,7 @@ class VetAppointmentsController < ApplicationController
   end
 
   def destroy
-    @vet_appointment = VetAppointment.find(params[:vet_appointment_id])
+    @vet_appointment = VetAppointment.find(params[:id])
     @vet_appointment.destroy
     @pet = Pet.find(params[:pet_id])
   end
