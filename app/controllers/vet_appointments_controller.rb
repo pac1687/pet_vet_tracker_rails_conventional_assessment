@@ -3,7 +3,6 @@ class VetAppointmentsController < ApplicationController
     @veterinarians = Veterinarian.all
     @pet = Pet.find(params[:pet_id])
     @vet_appointment = @pet.vet_appointments.new
-    render('vet_appointments/new.html.erb')
   end
 
   def create
@@ -11,10 +10,10 @@ class VetAppointmentsController < ApplicationController
     @vet_appointment = VetAppointment.new(params[:vet_appointment])
     if @vet_appointment.save
       flash[:notice] = "Your vet appointment was added to the Pet Tracker."
-      redirect_to("/pets/#{@pet.id}")
+      redirect_to pet_path(@pet)
     else
       @veterinarians = Veterinarian.all
-      render('vet_appointments/new.html.erb')
+      render 'new'
     end
   end
 
@@ -22,7 +21,7 @@ class VetAppointmentsController < ApplicationController
     @veterinarians = Veterinarian.all
     @pet = Pet.find(params[:pet_id])
     @vet_appointment = VetAppointment.find(params[:vet_appointment_id])
-    render('vet_appointments/edit.html.erb')
+    render 'edit'
   end
 
   def update
@@ -30,9 +29,9 @@ class VetAppointmentsController < ApplicationController
     @vet_appointment = VetAppointment.find(params[:vet_appointment_id])
     if @vet_appointment.update(params[:vet_appointment])
       flash[:notice] = "Your vet appointment was updated."
-      redirect_to("/pets/#{@pet.id}")
+      redirect_to pet_path(@pet)
     else
-      render('vet_appointments/edit.html.erb')
+      render 'edit'
     end
   end
 
@@ -40,6 +39,5 @@ class VetAppointmentsController < ApplicationController
     @vet_appointment = VetAppointment.find(params[:vet_appointment_id])
     @vet_appointment.destroy
     @pet = Pet.find(params[:pet_id])
-    render('vet_appointments/destroy.html.erb')
   end
 end
