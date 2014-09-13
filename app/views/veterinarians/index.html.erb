@@ -4,7 +4,7 @@
 <div class="container">
   <ul>
     <% @veterinarians.each do |veterinarian| %>
-      <li><h3><a href="/veterinarians/<%= veterinarian.id %>"><%= veterinarian.name %></a></h3></li>
+      <li><h3><%= link_to "#{veterinarian.name}", veterinarian_path(veterinarian) %></h3></li>
     <% end %>
   </ul>
 </div>
