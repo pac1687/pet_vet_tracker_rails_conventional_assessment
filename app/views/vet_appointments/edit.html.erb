@@ -1,0 +1,16 @@
+<h1>Edit Appointment for <%= @vet_appointment.pet.name %></h1>
+
+<% if @vet_appointment.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @vet_appointment.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/pets/<%= @vet_appointment.pet.id %>/vet_appointments/<%= @vet_appointment.id %>" method="post">
+  <input name = "_method" type="hidden" value="patch">
+  <%= render('form') %>
+  <button class="btn btn-warning">Update Vet appointment</button>
+</form>

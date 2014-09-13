@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>Veterinarians</h1>
+</div>
+<div class="container">
+  <ul>
+    <% @veterinarians.each do |veterinarian| %>
+      <li><h3><a href="/veterinarians/<%= veterinarian.id %>"><%= veterinarian.name %></a></h3></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="page-header">
+  <h2>New Veterinarian</h2>
+</div>
+
+<div class="container">
+  <% if @veterinarian.errors.any? %>
+    <h3>Please fix these errors:</h3>
+    <ul>
+      <% @veterinarian.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <form action="/veterinarians" method="post">
+    <%= render('form') %>
+    <button class="btn btn-primary">Create Veterinarian</button>
+  </form>
+</div>
+
+<br>

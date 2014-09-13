@@ -1,0 +1,16 @@
+<h1>Edit Pet</h1>
+
+<% if @pet.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @pet.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/pets/<%= @pet.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render('form') %>
+  <button class="btn btn-warning">Update Pet</button>
+</form>

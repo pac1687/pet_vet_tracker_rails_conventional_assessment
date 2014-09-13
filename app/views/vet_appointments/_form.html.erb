@@ -1,0 +1,14 @@
+<input id="pet_id" name="vet_appointment[pet_id]" type="hidden" value="<%= @vet_appointment.pet_id %>">
+<select name="vet_appointment[veterinarian_id]">
+  <% @veterinarians.each do |veterinarian|%>
+  <option value="<%= veterinarian.id %>"> <%= veterinarian.name %></option>
+  <% end %>
+</select>
+<label for="description">Description</label>
+<input id="description" name="vet_appointment[description]" type="text" value="<%= @vet_appointment.description %>">
+<label for="note">Note</label>
+<input id="note" name="vet_appointment[note]" type="text" value="<%= @vet_appointment.note %>">
+<label for="cost">Cost</label>
+<input id="cost" name="vet_appointment[cost]" type="text" value="<%= @vet_appointment.cost %>">
+<label for="date">Date</label>
+<input id="date" name="vet_appointment[date]" type="text" value="<%= @vet_appointment.date %>">

@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1><%= @veterinarian.name %></h1>
+</div>
+
+<p>Phone: <%= @veterinarian.phone %></p>
+<p>Email: <a href="mailto:<%= @veterinarian.email %>"><%= @veterinarian.email %></a></p>
+<p>Address: <%= @veterinarian.address %>     <a class="btn btn-success" href="http://maps.google.com/?q=<%= @veterinarian.address %>" target="_blank">Map it!</a></p>
+
+<a class="btn btn-warning" href="/veterinarians/<%= @veterinarian.id %>/edit">Edit</a>
+<a class="btn btn-danger" href="/veterinarians/<%= @veterinarian.id %>"
+      data-confirm="You sure?"
+      data-method="delete"
+      rel="nofollow">Delete</a>

@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>Pets</h1>
+</div>
+<div class="container">
+  <ul>
+    <% @pets.each do |pet| %>
+      <li><h3><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h3></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="page-header">
+  <h2>New Pet</h2>
+</div>
+
+<div class="container">
+  <% if @pet.errors.any? %>
+    <h3>Please fix these errors:</h3>
+    <ul>
+      <% @pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <form action="/pets" method="post">
+    <%= render('form') %>
+    <button class="btn btn-primary">Create Pet</button>
+  </form>
+</div>
+
+<br>
