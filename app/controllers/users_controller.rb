@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @pet = Pet.new
     @pets = @user.pets.all
   end
 
@@ -49,5 +50,5 @@ private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
+
 end
