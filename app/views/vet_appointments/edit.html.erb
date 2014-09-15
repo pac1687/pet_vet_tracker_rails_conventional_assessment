@@ -9,8 +9,4 @@
   </ul>
 <% end %>
 
-<form action="/pets/<%= @vet_appointment.pet.id %>/vet_appointments/<%= @vet_appointment.id %>" method="post">
-  <input name = "_method" type="hidden" value="patch">
-  <%= render('form') %>
-  <button class="btn btn-warning">Update Vet appointment</button>
-</form>
+<%= render('form') %>

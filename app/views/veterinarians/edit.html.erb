@@ -1,12 +1,3 @@
 <h1>Edit Veterinarian</h1>
 
-<% if @veterinarian.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @veterinarian.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= render('form') %>

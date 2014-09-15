@@ -26,7 +26,7 @@ class VetAppointmentsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:pet_id])
-    @vet_appointment = VetAppointment.find(params[:vet_appointment_id])
+    @vet_appointment = VetAppointment.find(params[:id])
     if @vet_appointment.update(params[:vet_appointment])
       flash[:notice] = "Your vet appointment was updated."
       redirect_to pet_path(@pet)
