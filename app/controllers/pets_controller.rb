@@ -9,7 +9,7 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.new(params[:pet])
+    @pet = Pet.new(pet_params)
     if @pet.save
       flash[:notice] = "#{@pet.name} was added to the Pet Tracker."
       redirect_to pet_path(@pet)
@@ -25,7 +25,7 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    if @pet.update(params[:pet])
+    if @pet.update(pet_params)
       flash[:notice] = "#{@pet.name} was updated."
       redirect_to pet_path(@pet)
     else
@@ -36,5 +36,11 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
+  end
+
+private
+
+  def pet_params
+    params.require(:pet).permit(:name, :age, :weight, :kind)
   end
 end
