@@ -7,7 +7,7 @@ class VetAppointmentsController < ApplicationController
 
   def create
     @pet = Pet.find(params[:pet_id])
-    @vet_appointment = VetAppointment.new(params[:vet_appointment])
+    @vet_appointment = VetAppointment.new(vet_appointment_params)
     if @vet_appointment.save
       flash[:notice] = "Your vet appointment was added to the Pet Tracker."
       redirect_to pet_path(@pet)
@@ -27,7 +27,7 @@ class VetAppointmentsController < ApplicationController
   def update
     @pet = Pet.find(params[:pet_id])
     @vet_appointment = VetAppointment.find(params[:id])
-    if @vet_appointment.update(params[:vet_appointment])
+    if @vet_appointment.update(vet_appointment_params)
       flash[:notice] = "Your vet appointment was updated."
       redirect_to pet_path(@pet)
     else
@@ -39,5 +39,11 @@ class VetAppointmentsController < ApplicationController
     @vet_appointment = VetAppointment.find(params[:id])
     @vet_appointment.destroy
     @pet = Pet.find(params[:pet_id])
+  end
+
+private
+
+  def vet_appointment_params
+    params.require(:vet_appointment).permit(:pet_id, :veterinarian_id, :description, :note, :cost, :date)
   end
 end
