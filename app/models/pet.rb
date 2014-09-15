@@ -3,6 +3,6 @@ class Pet < ActiveRecord::Base
   validates :age, :presence => true
   validates :weight, :presence => true
   validates :kind, :presence => true
-  has_many :vet_appointments
+  has_many :vet_appointments, dependent: :destroy
   has_many :veterinarians, through: :vet_appointments
 end
