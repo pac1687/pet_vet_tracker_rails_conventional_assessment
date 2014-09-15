@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   before_filter :authorize, only: [:show, :edit, :update]
 
-  def index
-    @users = User.all
-    @user = User.new
-  end
-
   def show
     @user = User.find(params[:id])
     @pet = Pet.new
@@ -19,7 +14,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, notice: "Thank you for signing up!"
+      session[:user_id] = @user.id
+      redirect_to pets_path, notice: "Thank you for signing up!"
     else
       render "index"
     end
@@ -39,7 +35,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to :back, notice: "Account updated."
+      redirect_to user_path(@user), notice: "Account updated."
     else
       redirect_to :back, alert: "Update failed!"
     end
