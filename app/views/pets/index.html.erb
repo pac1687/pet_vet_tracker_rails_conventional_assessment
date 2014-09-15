@@ -14,19 +14,7 @@
 </div>
 
 <div class="container">
-  <% if @pet.errors.any? %>
-    <h3>Please fix these errors:</h3>
-    <ul>
-      <% @pet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <form action="/pets" method="post">
-    <%= render('form') %>
-    <button class="btn btn-primary">Create Pet</button>
-  </form>
+  <%= render('form') %>
 </div>
 
 <br>

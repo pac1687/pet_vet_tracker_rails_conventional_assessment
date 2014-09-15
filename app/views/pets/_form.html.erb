@@ -1,8 +1,21 @@
-  <label for="pet_name">Name</label>
-  <input id="pet_name" name="pet[name]" type="text" value="<%= @pet.name %>">
-  <label for="pet_age">Age</label>
-  <input id="pet_age" name="pet[age]" type="text" value="<%= @pet.age %>">
-  <label for="pet_weight">Weight</label>
-  <input id="pet_weight" name="pet[weight]" type="text" value="<%= @pet.weight %>">
-  <label for="pet_kind">Kind</label>
-  <input id="pet_kind" name="pet[kind]" type="text" value="<%= @pet.kind %>">
+<%= render("layouts/errors", :object => @pet) %>
+
+<%= form_for(@pet) do |f| %>
+  <div class="align-rt">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="align-rt">
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+  <div class="align-rt">
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="align-rt">
+    <%= f.label :kind %>
+    <%= f.text_field :kind %>
+  </div>
+  <%= f.submit(:class => "btn btn-primary") %>
+<% end %>
