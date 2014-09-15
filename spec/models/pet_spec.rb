@@ -5,4 +5,5 @@ describe Pet do
   it { should validate_presence_of :kind }
   it { should have_many :vet_appointments }
   it { should have_many :veterinarians }
+  it { should belong_to :user }
 end
