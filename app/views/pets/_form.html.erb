@@ -1,19 +1,19 @@
 <%= render("layouts/errors", :object => @pet) %>
 
 <%= form_for(@pet) do |f| %>
-  <div>
+  <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :age %>
     <%= f.text_field :age %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :weight %>
     <%= f.text_field :weight %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :kind %>
     <%= f.text_field :kind %>
   </div>

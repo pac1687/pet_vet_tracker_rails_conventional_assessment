@@ -1,19 +1,19 @@
   <%= render("layouts/errors", :object => @veterinarian) %>
 
   <%= form_for(@veterinarian) do |f| %>
-    <div>
+    <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :phone %>
       <%= f.text_field :phone %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :email %>
       <%= f.text_field :email %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :address %>
       <%= f.text_field :address %>
     </div>
