@@ -9,7 +9,7 @@ class VeterinariansController < ApplicationController
   end
 
   def create
-    @veterinarian = Veterinarian.new(params[:veterinarian])
+    @veterinarian = Veterinarian.new(veterinarian_params)
     if @veterinarian.save
       flash[:notice] = "#{@veterinarian.name} was added to the Pet Tracker."
       redirect_to veterinarian_path(@veterinarian)
@@ -25,7 +25,7 @@ class VeterinariansController < ApplicationController
 
   def update
     @veterinarian = Veterinarian.find(params[:id])
-    if @veterinarian.update(params[:veterinarian])
+    if @veterinarian.update(veterinarian_params)
       flash[:notice] = "#{@veterinarian.name} was updated."
       redirect_to veterinarian_path(@veterinarian)
     else
@@ -36,5 +36,11 @@ class VeterinariansController < ApplicationController
   def destroy
     @veterinarian = Veterinarian.find(params[:id])
     @veterinarian.destroy
+  end
+
+private
+
+  def veterinarian_params
+    params.require(:veterinarian).permit(:name, :phone, :email, :address)
   end
 end
