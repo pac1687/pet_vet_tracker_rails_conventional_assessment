@@ -5,4 +5,5 @@ describe Veterinarian do
   it { should validate_presence_of :address }
   it { should have_many :vet_appointments }
   it { should have_many :pets }
+  it { should belong_to :user }
 end

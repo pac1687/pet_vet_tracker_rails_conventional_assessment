@@ -1,6 +1,6 @@
 class VeterinariansController < ApplicationController
   def index
-    @veterinarians = Veterinarian.all
+    @veterinarians = current_user.veterinarians.all
     @veterinarian = Veterinarian.new
   end
 

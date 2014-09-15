@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user), notice: "Logged in!"
+      redirect_to pets_path, notice: "Logged in!"
     else
       redirect_to :back, alert: "Email or password is invalid."
     end

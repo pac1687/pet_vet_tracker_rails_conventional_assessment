@@ -5,4 +5,5 @@ class Veterinarian < ActiveRecord::Base
   validates :address, :presence => true
   has_many :vet_appointments, dependent: :destroy
   has_many :pets, through: :vet_appointments
+  belongs_to :user
 end

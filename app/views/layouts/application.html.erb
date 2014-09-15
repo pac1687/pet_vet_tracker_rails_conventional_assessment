@@ -18,7 +18,7 @@
           <span class="icon-bar"></span>
         </button>
         <% if current_user %>
-          <%= link_to "Pet Vet Tracker", user_path(current_user), :class => "navbar-brand" %>
+          <%= link_to "Pet Vet Tracker", pets_path, :class => "navbar-brand" %>
           <% else %>
           <%= link_to "Pet Vet Tracker", root_url, :class => "navbar-brand" %>
         <% end %>
@@ -28,20 +28,18 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <% if current_user %>
-            <li><%= link_to "Pets", root_url %></li>
+            <li><%= link_to "Pets", pets_path %></li>
             <li><%= link_to "Veterinarians", veterinarians_path %></li>
           <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
-            <% if current_user %>
-                <li><%= link_to "Logged in as #{current_user.email}", user_path(current_user) %></li>
-                <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
-              <% else %>
-                <li><%= link_to "Sign Up", new_user_path %></li>
-                <li><%= link_to "Log In", new_session_path %></li>
-            <% end %>
-          </li>
+          <% if current_user %>
+              <li><%= link_to "Logged in as #{current_user.email}", user_path(current_user) %></li>
+              <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
+            <% else %>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+              <li><%= link_to "Log In", new_session_path %></li>
+          <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
