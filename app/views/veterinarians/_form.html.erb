@@ -1,8 +1,21 @@
-  <label for="veterinarian_name">Name</label>
-  <input id="veterinarian_name" name="veterinarian[name]" type="text" value="<%= @veterinarian.name %>">
-  <label for="veterinarian_phone">Phone</label>
-  <input id="veterinarian_phone" name="veterinarian[phone]" type="text" value="<%= @veterinarian.phone %>">
-  <label for="veterinarian_email">Email</label>
-  <input id="veterinarian_email" name="veterinarian[email]" type="text" value="<%= @veterinarian.email %>">
-  <label for="veterinarian_address">Address</label>
-  <input id="veterinarian_address" name="veterinarian[address]" type="text" value="<%= @veterinarian.address %>">
+  <%= render("layouts/errors", :object => @veterinarian) %>
+
+  <%= form_for(@veterinarian) do |f| %>
+    <div class="align-rt">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="align-rt">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+    <div class="align-rt">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="align-rt">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <%= f.submit(:class => "btn btn-primary") %>
+  <% end %>

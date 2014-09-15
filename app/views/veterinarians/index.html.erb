@@ -14,19 +14,7 @@
 </div>
 
 <div class="container">
-  <% if @veterinarian.errors.any? %>
-    <h3>Please fix these errors:</h3>
-    <ul>
-      <% @veterinarian.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-
-  <form action="/veterinarians" method="post">
-    <%= render('form') %>
-    <button class="btn btn-primary">Create Veterinarian</button>
-  </form>
+  <%= render('form') %>
 </div>
 
 <br>
