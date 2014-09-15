@@ -2,19 +2,19 @@
 
 <%= form_for(@pet) do |f| %>
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="form-group">
-    <%= f.label :age %>
+    <%= f.label :age %><br />
     <%= f.text_field :age %>
   </div>
   <div class="form-group">
-    <%= f.label :weight %>
+    <%= f.label :weight %><br />
     <%= f.text_field :weight %>
   </div>
   <div class="form-group">
-    <%= f.label :kind %>
+    <%= f.label :kind %><br />
     <%= f.text_field :kind %>
   </div>
   <%= f.submit(:class => "btn btn-primary") %>

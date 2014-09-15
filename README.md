@@ -1,4 +1,4 @@
-#Ruby on Rails Basic Assessment - Pet Vet Tracker#
+#Ruby on Rails Conventional Assessment - Pet Vet Tracker#
 
 #####[Pet Vet Tracker] (http://pet-vet-tracker.herokuapp.com/) on Heroku
 
@@ -6,7 +6,7 @@
 
 ###About:
 
-This program was written as my assessment in Ruby on Rails Basic for Epicodus Summer 2014
+This program was written as my assessment in Ruby on Rails Conventional for Epicodus Summer 2014
 
 ###Description:
 This website allows a user to create, edit, delete and list all their pets and preferred veterinarians (as well as various details) to the tracker.  It also allows a user to create appointments for their pet at one of the vets they have added.

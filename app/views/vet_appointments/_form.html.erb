@@ -6,19 +6,19 @@
       <%= f.collection_select :veterinarian_id, Veterinarian.all, :id, :name %>
     </div>
     <div class="form-group">
-      <%= f.label :description %>
+      <%= f.label :description %><br />
       <%= f.text_field :description %>
     </div>
     <div class="form-group">
-      <%= f.label :note %>
+      <%= f.label :note %><br />
       <%= f.text_field :note %>
     </div>
     <div class="form-group">
-      <%= f.label :cost %>
+      <%= f.label :cost %><br />
       <%= f.text_field :cost %>
     </div>
     <div class="form-group">
-      <%= f.label :date %>
+      <%= f.label :date %><br />
       <%= f.text_field :date %>
     </div>
     <%= f.submit(:class => "btn btn-primary") %>
