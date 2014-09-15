@@ -23,8 +23,19 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/">Pets</a></li>
-          <li><a href="/veterinarians">Veterinarians</a></li>
+          <li><%= link_to "Pets", root_url %></li>
+          <li><%= link_to "Veterinarians", veterinarians_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if current_user %>
+                <li><%= link_to "Logged in as #{current_user.email}", user_path(current_user) %></li>
+                <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
+              <% else %>
+                <li><%= link_to "Sign Up", new_user_path %></li>
+                <li><%= link_to "Log In", new_session_path %></li>
+            <% end %>
+          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
