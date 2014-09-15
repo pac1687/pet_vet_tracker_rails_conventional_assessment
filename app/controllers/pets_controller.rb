@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_filter :authorize
+  
   def index
     @pets = current_user.pets.all
     @pet = Pet.new

@@ -1,4 +1,6 @@
 class VeterinariansController < ApplicationController
+  before_filter :authorize
+  
   def index
     @veterinarians = current_user.veterinarians.all
     @veterinarian = Veterinarian.new
