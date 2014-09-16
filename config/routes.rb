@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     resources :vet_appointments, :except => [:index, :show]
   end
   resources :veterinarians
-  resources :sessions, :except => [:index, :edit]
+  resources :sessions, :except => [:index, :edit, :update]
   resources :users, :except => [:index]
 end
