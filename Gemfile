@@ -19,12 +19,12 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem 'pry'
 end
 
 group :production do

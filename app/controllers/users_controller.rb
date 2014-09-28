@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to pets_path, notice: "Thank you for signing up!"
     else
-      render "index"
+      redirect_to :back, alert: "All fields are required." 
     end
   end
 
