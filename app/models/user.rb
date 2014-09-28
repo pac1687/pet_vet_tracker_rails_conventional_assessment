@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
   validates :password, :presence => { :on => :create }
   validates :password_confirmation, :presence => { :on => :create }
+  validates :email, :presence => true
   validates_uniqueness_of :email
 
   has_many :pets

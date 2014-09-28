@@ -14,8 +14,17 @@ end
 
 def sign_up(new_user)
   visit "/users/new"
-  fill_in 'user_username', :with => new_user.username
+  fill_in 'user_name', :with => new_user.name
+  fill_in 'user_email', :with => new_user.email
   fill_in 'user_password', :with => new_user.password
   fill_in 'user_password_confirmation', :with => new_user.password_confirmation
-  click_button "Sign Up"
+  click_button "Create User"
+end
+
+def wrong_sign_up(new_user)
+  visit "/users/new"
+  fill_in 'user_name', :with => new_user.name
+  fill_in 'user_password', :with => new_user.password
+  fill_in 'user_password_confirmation', :with => new_user.password_confirmation
+  click_button "Create User"
 end
