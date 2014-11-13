@@ -45,8 +45,8 @@
     </div><!-- /.container-fluid -->
   </nav>
 <div class="container">
-  <%= flash[:alert] %>
-  <%= flash[:notice] %>
+  <p class="bg-success"><%= flash[:notice] %></p>
+  <p class="bg-danger"><%= flash[:alert] %></p>
 
   <%= yield %>
 </div>
