@@ -9,8 +9,8 @@ describe "the sign up process", :type => :feature do
   end
 
   it "gives a user an error who doesn't fill in all the fields" do
-    user = User.new(:name => 'User', :email => 'user@example.com', :password => 'password', :password_confirmation => 'password')
+    user = FactoryGirl.create(:user)
     wrong_sign_up(user)
-    expect(page).to have_content "All fields are required." 
+    expect(page).to have_content "All fields are required."
   end
 end
