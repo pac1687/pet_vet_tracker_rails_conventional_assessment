@@ -1,5 +1,11 @@
 class SessionsController < ApplicationController
 
+  def new
+    if current_user.present?
+      redirect_to pets_path
+    end
+  end
+
   def create
   user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
