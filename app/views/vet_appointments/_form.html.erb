@@ -3,7 +3,7 @@
   <%= form_for [@pet, @vet_appointment] do |f| %>
     <input id="pet_id" name="vet_appointment[pet_id]" type="hidden" value="<%= @vet_appointment.pet_id %>">
     <div class="form-group">
-      <%= f.collection_select :veterinarian_id, Veterinarian.all, :id, :name %>
+      <%= f.collection_select :veterinarian_id, current_user.veterinarians, :id, :name %>
     </div>
     <div class="form-group">
       <%= f.label :description %><br />
