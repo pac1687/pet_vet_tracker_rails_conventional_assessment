@@ -44,3 +44,11 @@ def add_appointment(pet)
   fill_in 'vet_appointment_date', with: '2014-11-24'
   click_button "Create Vet appointment"
 end
+
+def add_veterinarian(veterinarian)
+  fill_in 'veterinarian_name', with: veterinarian.name
+  fill_in 'veterinarian_phone', with: veterinarian.phone
+  fill_in 'veterinarian_email', with: veterinarian.email
+  fill_in 'veterinarian_address', with: veterinarian.address
+  click_button "Create Veterinarian"
+end
