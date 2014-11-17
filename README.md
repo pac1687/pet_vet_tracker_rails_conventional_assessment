@@ -1,6 +1,6 @@
 #Ruby on Rails Conventional Assessment - Pet Vet Tracker#
 
-#####[Pet Vet Tracker] (http://pet-vet-tracker.herokuapp.com/) on Heroku
+#####[Pet Vet Tracker] (https://pet-tracker-two.herokuapp.com/) on Heroku
 
 #####Written by [Justin Pacubas] (https://github.com/pac1687)
 
@@ -9,10 +9,11 @@
 This program was written as my assessment in Ruby on Rails Conventional for Epicodus Summer 2014
 
 ###Description:
-This website allows a user to create, edit, delete and list all their pets and preferred veterinarians (as well as various details) to the tracker.  It also allows a user to create appointments for their pet at one of the vets they have added.
+This website allows the creation of an individual user account and allows a user to create, edit, delete and list all their pets and preferred veterinarians (as well as various details) to the tracker.  It also allows a user to create appointments for their pet at one of the vets they have added.
 
 ===============================
 ####Features
++ Basic user registration and authentication
 + Index page to show a list of pets and add pets.
 + Index page to show a list of pets and add veterinarians.
 + Show page to show details about their pets as well as add and list their appointments.
@@ -35,7 +36,7 @@ This website allows a user to create, edit, delete and list all their pets and p
 ##Schema:
 This program utilizes a postgresql database labeled 'pet_tracker_development' with the following schema:
 
-![Pet Tracker Schema](http://i.imgur.com/h6Sw5YV.png)
+![Pet Tracker Schema](http://i.imgur.com/504Msi1.png)
 
 ####License:
 MIT
