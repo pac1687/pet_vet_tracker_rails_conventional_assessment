@@ -1,6 +1,6 @@
 class VeterinariansController < ApplicationController
   before_filter :authorize
-  
+
   def index
     @veterinarians = current_user.veterinarians.all
     @veterinarian = Veterinarian.new
@@ -11,6 +11,7 @@ class VeterinariansController < ApplicationController
   end
 
   def create
+    binding.pry
     @veterinarian = Veterinarian.new(veterinarian_params)
     if @veterinarian.save
       flash[:notice] = "#{@veterinarian.name} was added to the Pet Tracker."
@@ -43,6 +44,6 @@ class VeterinariansController < ApplicationController
 private
 
   def veterinarian_params
-    params.require(:veterinarian).permit(:name, :phone, :email, :address)
+    params.require(:veterinarian).permit(:name, :phone, :email, :address, :user_id)
   end
 end

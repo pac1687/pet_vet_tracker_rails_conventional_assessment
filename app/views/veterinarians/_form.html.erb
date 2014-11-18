@@ -1,6 +1,7 @@
   <%= render("layouts/errors", :object => @veterinarian) %>
 
   <%= form_for(@veterinarian) do |f| %>
+    <input id="user_id" name="veterinarian[user_id]" type="hidden" value="<%= current_user.id %>">
     <div class="form-group">
       <%= f.label :name %><br />
       <%= f.text_field :name %>
