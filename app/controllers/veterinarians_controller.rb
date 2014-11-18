@@ -11,7 +11,6 @@ class VeterinariansController < ApplicationController
   end
 
   def create
-    binding.pry
     @veterinarian = Veterinarian.new(veterinarian_params)
     if @veterinarian.save
       flash[:notice] = "#{@veterinarian.name} was added to the Pet Tracker."
