@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_filter :authorize
-  
+
   def index
     @pets = current_user.pets.all
     @pet = Pet.new
@@ -11,6 +11,7 @@ class PetsController < ApplicationController
   end
 
   def create
+    binding.pry
     @pet = Pet.new(pet_params)
     if @pet.save
       flash[:notice] = "#{@pet.name} was added to the Pet Tracker."
@@ -43,6 +44,6 @@ class PetsController < ApplicationController
 private
 
   def pet_params
-    params.require(:pet).permit(:name, :age, :weight, :kind)
+    params.require(:pet).permit(:name, :age, :weight, :kind, :user_id)
   end
 end
