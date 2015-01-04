@@ -1,4 +1,4 @@
-<body id="pet-landing">
+<body class="pet-landing">
   <div class="jumbotron" id="landing-translucent">
     <h1>Keep track of your pets</h1>
     <p>What is Pet Vet Tracker?  It's an easy way to keep track of your pet's veterinarian appointments as well as other critical information all in one place.</p>
@@ -7,7 +7,9 @@
   <div class="user-card">
     <%= form_tag sessions_path do %>
       <div>
-        <h1>Log In</h1>
+        <div class="page-header">
+          <h1>Log In</h1>
+        </div>
         <div class="form-group">
                 <%= label_tag :email %><br />
                 <%= text_field_tag :email, params[:email] %>

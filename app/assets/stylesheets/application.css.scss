@@ -37,16 +37,16 @@ body {
   font-weight: 400;
   }
 
-#pet-landing {
-  background-image: url("/assets/dog.jpg");
+.pet-landing {
+  background: url("/assets/pets.jpg") no-repeat;
   background-size: cover;
 }
 
-#pet-landing h1 {
+.pet-landing h1 {
   color: white;
 }
 
-#pet-landing p {
+.pet-landing p {
   color: white;
 }
 
