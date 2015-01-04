@@ -7,7 +7,7 @@
 <p>Kind: <%= @pet.kind %></p>
 
 <%= link_to "Edit", edit_pet_path(@pet), :class => "btn btn-warning" %>
-<%= link_to "Delete", pet_path(@pet), 
+<%= link_to "Delete", pet_path(@pet),
   :data =>{:confirm=> "You sure?",
            :method => "delete"},
            :class => "btn btn-danger" %>
@@ -22,7 +22,7 @@
       <li>
         Veterinarian: <%= vet_appointment.veterinarian.name %>
         <%= link_to "Edit", edit_pet_vet_appointment_path(@pet, vet_appointment), :class => "btn btn-warning" %> |
-        <%= link_to "Delete", pet_vet_appointment_path(@pet, vet_appointment), 
+        <%= link_to "Delete", pet_vet_appointment_path(@pet, vet_appointment),
           :data =>{:confirm=> "You sure?",
                    :method => "delete"},
                    :class => "btn btn-danger" %>
@@ -31,7 +31,7 @@
             <li>Description: <%= vet_appointment.description %></li>
             <li>Note: <%= vet_appointment.note %></li>
             <li>Cost: $<%= vet_appointment.cost %></li>
-            <li>Date: <%= vet_appointment.date %></li>
+            <li>Date: <%= vet_appointment.date.strftime("%A, %B %e, %Y at %l:%M %p") %></li>
           </ul>
         </div>
       </li>
