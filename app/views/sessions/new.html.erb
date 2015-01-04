@@ -1,14 +1,26 @@
-<h1>Log In</h1>
+<body id="pet-landing">
+  <div class="jumbotron" id="landing-translucent">
+    <h1>Keep track of your pets</h1>
+    <p>What is Pet Vet Tracker?  It's an easy way to keep track of your pet's veterinarian appointments as well as other critical information all in one place.</p>
+  </div>
 
-<%= form_tag sessions_path do %>
-  <div class="form-group">
-          <%= label_tag :email %><br />
-          <%= text_field_tag :email, params[:email] %>
+  <div class="user-card">
+    <%= form_tag sessions_path do %>
+      <div>
+        <h1>Log In</h1>
+        <div class="form-group">
+                <%= label_tag :email %><br />
+                <%= text_field_tag :email, params[:email] %>
+        </div>
+        <div class="form-group">
+                <%= label_tag :password %><br />
+                <%= password_field_tag :password %>
+        </div>
+        <div class="actions"><%= submit_tag "Log In", :class => "btn btn-primary" %>
+        </div>
+        <br>
+        <%= link_to "Not registered?", new_user_path %>
+      </div>
+    <% end %>
   </div>
-  <div class="form-group">
-          <%= label_tag :password %><br />
-          <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log In", :class => "btn btn-primary" %>
-  </div>
-<% end %>
+</body>
