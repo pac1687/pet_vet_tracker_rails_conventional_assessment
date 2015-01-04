@@ -41,7 +41,9 @@ def add_appointment(pet)
   fill_in 'vet_appointment_description', with: 'Shots'
   fill_in 'vet_appointment_note', with: "#{pet.name} needs his annual shots."
   fill_in 'vet_appointment_cost', with: 75
-  fill_in 'vet_appointment_date', with: '2014-11-24'
+  select 'January', from: 'vet_appointment_date_2i'
+  select '1', from: 'vet_appointment_date_3i'
+  select '2015', from: 'vet_appointment_date_1i'
   click_button "Create Vet appointment"
 end
 

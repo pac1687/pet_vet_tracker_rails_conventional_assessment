@@ -22,7 +22,7 @@ end
 describe "editing a pet", :type => :feature do
 
   let(:user)            { FactoryGirl.create(:user) }
-  let(:pet)             { FactoryGirl.create(:pet) }
+  let(:pet)             { FactoryGirl.create(:pet, user_id: user.id) }
   let(:current_user)    { user }
   let!(:veterinarian)   { FactoryGirl.create(:veterinarian, user_id: current_user.id) }
 
