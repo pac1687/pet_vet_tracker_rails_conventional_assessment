@@ -30,7 +30,7 @@
           <ul>
             <li>Description: <%= vet_appointment.description %></li>
             <li>Note: <%= vet_appointment.note %></li>
-            <li>Cost: $<%= vet_appointment.cost %></li>
+            <li>Cost: $<%= '%.2f' % vet_appointment.cost %></li>
             <li>Date: <%= vet_appointment.date.strftime("%A, %B %e, %Y at %l:%M %p") %></li>
           </ul>
         </div>
