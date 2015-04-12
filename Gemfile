@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 gem 'bcrypt'
 gem 'newrelic_rpm'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'better_errors'
