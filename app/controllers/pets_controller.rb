@@ -17,7 +17,7 @@ class PetsController < ApplicationController
       flash[:notice] = "#{@pet.name} was added to the Pet Tracker."
       redirect_to pet_path(@pet)
     else
-      @pets = Pet.all
+      @pets = current_user.pets.all
       @upcoming_appointments = VetAppointment.where(pet: @pets).where('vet_appointments.date > :now', :now => Time.now).order('vet_appointments.date ASC')
       render 'index'
     end
