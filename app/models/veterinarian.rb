@@ -3,7 +3,7 @@ class Veterinarian < ActiveRecord::Base
   validates :phone, :presence => true
   validates :email, :presence => true
   validates :address, :presence => true
-  validates :user_id, :presence => true
+  validates :user_id, :numericality => true
   has_many :vet_appointments, dependent: :destroy
   has_many :pets, through: :vet_appointments
   belongs_to :user
