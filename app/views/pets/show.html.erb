@@ -12,6 +12,11 @@
            :method => "delete"},
            :class => "btn btn-danger" %>
 
+<br>
+<br>
+
+<%= link_to "Add Appointment", new_pet_vet_appointment_path(@pet), :class=> "btn btn-primary" %>
+
 <div class="page-header">
   <h3>Upcoming Appointments:</h3>
 </div>
@@ -25,8 +30,6 @@
     <% end %>
   </ol>
 </div>
-
-<%= link_to "Add Appointment", new_pet_vet_appointment_path(@pet), :class=> "btn btn-primary" %>
 
 <div class="page-header">
   <h3>Past Appointments:</h3>
