@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bcrypt'
 gem 'newrelic_rpm'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'better_errors'
