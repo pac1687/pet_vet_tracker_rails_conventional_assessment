@@ -13,30 +13,32 @@
            :class => "btn btn-danger" %>
 
 <div class="page-header">
-  <h3>Appointments:</h3>
+  <h3>Upcoming Appointments:</h3>
 </div>
 
 <div class="container">
   <ol>
     <% @pet.vet_appointments.each do |vet_appointment| %>
-      <li>
-        Veterinarian: <%= vet_appointment.veterinarian.name %>
-        <%= link_to "Edit", edit_pet_vet_appointment_path(@pet, vet_appointment), :class => "btn btn-warning" %> |
-        <%= link_to "Delete", pet_vet_appointment_path(@pet, vet_appointment),
-          :data =>{:confirm=> "You sure?",
-                   :method => "delete"},
-                   :class => "btn btn-danger" %>
-        <div class="container">
-          <ul>
-            <li>Description: <%= vet_appointment.description %></li>
-            <li>Note: <%= vet_appointment.note %></li>
-            <li>Cost: $<%= '%.2f' % vet_appointment.cost %></li>
-            <li>Date: <%= vet_appointment.date.strftime("%A, %B %e, %Y at %l:%M %p") %></li>
-          </ul>
-        </div>
-      </li>
+      <% if vet_appointment.date > Time.now %>
+        <%= render partial: "appointments", object: vet_appointment %>
+      <% end %>
     <% end %>
   </ol>
 </div>
 
 <%= link_to "Add Appointment", new_pet_vet_appointment_path(@pet), :class=> "btn btn-primary" %>
+
+<div class="page-header">
+  <h3>Past Appointments:</h3>
+</div>
+
+<div class="container">
+  <ol>
+    <% @pet.vet_appointments.each do |vet_appointment| %>
+      <% if vet_appointment.date < Time.now %>
+        <%= render partial: "appointments", object: vet_appointment %>
+      <% end %>
+    <% end %>
+  </ol>
+</div>
+
