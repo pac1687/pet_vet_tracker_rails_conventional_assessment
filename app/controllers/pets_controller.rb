@@ -4,6 +4,7 @@ class PetsController < ApplicationController
   def index
     @pets = current_user.pets.all
     @pet = Pet.new
+    @upcoming_appointments = VetAppointment.where(pet: @pets).where('vet_appointments.date > :now', :now => Time.now).order('vet_appointments.date ASC')
   end
 
   def show

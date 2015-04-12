@@ -1,5 +1,5 @@
 <li>
-  Veterinarian: <%= appointments.veterinarian.name %>
+  <%= appointments.date.strftime("%A, %B %e, %Y at %l:%M %p") %>
   <%= link_to "Edit", edit_pet_vet_appointment_path(@pet, appointments), :class => "btn btn-warning" %> |
   <%= link_to "Delete", pet_vet_appointment_path(@pet, appointments),
     :data =>{:confirm=> "You sure?",
@@ -7,10 +7,10 @@
              :class => "btn btn-danger" %>
   <div class="container">
     <ul>
+      <li>Veterinarian: <%= appointments.veterinarian.name %></li>
       <li>Description: <%= appointments.description %></li>
       <li>Note: <%= appointments.note %></li>
       <li>Cost: $<%= '%.2f' % appointments.cost %></li>
-      <li>Date: <%= appointments.date.strftime("%A, %B %e, %Y at %l:%M %p") %></li>
     </ul>
   </div>
 </li>
