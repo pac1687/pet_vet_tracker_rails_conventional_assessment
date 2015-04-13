@@ -1,4 +1,4 @@
 <h1>Vet Appointment Deleted!</h1>
 
-<p>Return <%= link_to "to Pets Listing", pets_path %>, or <%= link_to "create another appointment for #{@pet.name}", new_pet_vet_appointment_path(@pet) %>?</p>
+<p>Would you like to return to <%= link_to "#{@pet.name}'s page", pet_path(@pet) %>, <%= link_to "your Pets Listing page", pets_path %>, or <%= link_to "create another appointment for #{@pet.name}", new_pet_vet_appointment_path(@pet) %>?</p>
 
